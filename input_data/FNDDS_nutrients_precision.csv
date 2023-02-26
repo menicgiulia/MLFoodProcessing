@@ -1,0 +1,63 @@
+﻿Nutrient code,Nutrient description,Tagname,Unit,Decimals,Factor,MinDiff
+203,Protein,PROCNT,g,2,1,0.01
+204,Total Fat,FAT,g,2,1,0.01
+205,Carbohydrate,CHOCDF,g,2,1,0.01
+221,Alcohol,ALC,g,1,1,0.1
+255,Water,WATER,g,2,1,0.01
+262,Caffeine,CAFFN,mg,0,0.001,0.001
+263,Theobromine,THEBRN,mg,0,0.001,0.001
+269,"Sugars, total",SUGAR,g,2,1,0.01
+291,"Fiber, total dietary",FIBTG,g,1,1,0.1
+301,Calcium,CA,mg,0,0.001,0.001
+303,Iron,FE,mg,2,0.001,0.00001
+304,Magnesium,MG,mg,0,0.001,0.001
+305,Phosphorus,P,mg,0,0.001,0.001
+306,Potassium,K,mg,0,0.001,0.001
+307,Sodium,NA,mg,0,0.001,0.001
+309,Zinc,ZN,mg,2,0.001,0.00001
+312,Copper,CU,mg,3,0.001,0.000001
+317,Selenium,SE,mcg,1,0.000001,0.0000001
+319,Retinol,RETOL,mcg,0,0.000001,0.000001
+321,"Carotene, beta",CARTB,mcg,0,0.000001,0.000001
+322,"Carotene, alpha",CARTA,mcg,0,0.000001,0.000001
+323,Vitamin E (alpha-tocopherol),TOCPHA,mg,2,0.001,0.00001
+328,Vitamin D (D2 + D3),VITD,mcg,1,0.000001,0.0000001
+334,"Cryptoxanthin, beta",CRYPX,mcg,0,0.000001,0.000001
+337,Lycopene,LYCPN,mcg,0,0.000001,0.000001
+338,Lutein + zeaxanthin,LUT+ZEA,mcg,0,0.000001,0.000001
+401,Vitamin C,VITC,mg,1,0.001,0.0001
+404,Thiamin,THIA,mg,3,0.001,0.000001
+405,Riboflavin,RIBF,mg,3,0.001,0.000001
+406,Niacin,NIA,mg,3,0.001,0.000001
+415,Vitamin B-6,VITB6A,mg,3,0.001,0.000001
+417,"Folate, total",FOL,mcg,0,0.000001,0.000001
+418,Vitamin B-12,VITB12,mcg,2,0.000001,0.00000001
+421,"Choline, total",CHOLN,mg,1,0.001,0.0001
+430,Vitamin K (phylloquinone),VITK,mcg,1,0.000001,0.0000001
+431,Folic acid,FOLAC,mcg,0,0.000001,0.000001
+432,"Folate, food",FOLFD,mcg,0,0.000001,0.000001
+573,"Vitamin E, added",,mg,2,0.001,0.00001
+578,"Vitamin B-12, added",,mcg,2,0.000001,0.00000001
+601,Cholesterol,CHOLE,mg,0,0.001,0.001
+606,"Fatty acids, total saturated",FASAT,g,3,1,0.001
+607,4:00,F4D0,g,3,1,0.001
+608,6:00,F6D0,g,3,1,0.001
+609,8:00,F8D0,g,3,1,0.001
+610,10:00,F10D0,g,3,1,0.001
+611,12:00,F12D0,g,3,1,0.001
+612,14:00,F14D0,g,3,1,0.001
+613,16:00,F16D0,g,3,1,0.001
+614,18:00,F18D0,g,3,1,0.001
+617,18:01,F18D1,g,3,1,0.001
+618,18:02,F18D2,g,3,1,0.001
+619,18:03,F18D3,g,3,1,0.001
+620,20:04,F20D4,g,3,1,0.001
+621,22:6 n-3,F22D6,g,3,1,0.001
+626,16:01,F16D1,g,3,1,0.001
+627,18:04,F18D4,g,3,1,0.001
+628,20:01,F20D1,g,3,1,0.001
+629,20:5 n-3,F20D5,g,3,1,0.001
+630,22:01,F22D1,g,3,1,0.001
+631,22:5 n-3,F22D5,g,3,1,0.001
+645,"Fatty acids, total monounsaturated",FAMS,g,3,1,0.001
+646,"Fatty acids, total polyunsaturated",FAPU,g,3,1,0.001
