@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Protein", "label": "Protein", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Phosphorus", "label": "Phosphorus", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Zinc", "label": "Zinc", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Selenium", "label": "Selenium", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Magnesium", "label": "Magnesium", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Caffeine", "label": "Caffeine", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Theobromine", "label": "Theobromine", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Iron", "label": "Iron", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Niacin", "label": "Niacin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Thiamin", "label": "Thiamin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "4:00", "label": "4:00", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "6:00", "label": "6:00", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "8:00", "label": "8:00", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "10:00", "label": "10:00", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "12:00", "label": "12:00", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "14:00", "label": "14:00", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "16:00", "label": "16:00", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "18:00", "label": "18:00", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "18:01", "label": "18:01", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "18:02", "label": "18:02", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Daidzein", "label": "Daidzein", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Genistein", "label": "Genistein", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Petunidin", "label": "Petunidin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Malvidin", "label": "Malvidin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "(+)-Catechin", "label": "(+)-Catechin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "(-)-Epicatechin", "label": "(-)-Epicatechin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Theaflavin", "label": "Theaflavin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Thearubigins", "label": "Thearubigins", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Theaflavin-3,3\u0027-digallate", "label": "Theaflavin-3,3\u0027-digallate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Theaflavin-3\u0027-gallate", "label": "Theaflavin-3\u0027-gallate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Theaflavin-3-gallate", "label": "Theaflavin-3-gallate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Vitamin E, added", "label": "Vitamin E, added", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Vitamin B-12, added", "label": "Vitamin B-12, added", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "(-)-Epicatechin 3-gallate", "label": "(-)-Epicatechin 3-gallate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "(-)-Epigallocatechin 3-gallate", "label": "(-)-Epigallocatechin 3-gallate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Eriodictyol", "label": "Eriodictyol", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hesperetin", "label": "Hesperetin", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "Protein", "to": "Phosphorus", "width": 1}, {"from": "Protein", "to": "Zinc", "width": 1}, {"from": "Protein", "to": "Selenium", "width": 1}, {"from": "Phosphorus", "to": "Magnesium", "width": 1}, {"from": "Phosphorus", "to": "Zinc", "width": 1}, {"from": "Caffeine", "to": "Theobromine", "width": 1}, {"from": "Iron", "to": "Niacin", "width": 1}, {"from": "Niacin", "to": "Thiamin", "width": 1}, {"from": "4:00", "to": "6:00", "width": 1}, {"from": "6:00", "to": "8:00", "width": 1}, {"from": "6:00", "to": "10:00", "width": 1}, {"from": "8:00", "to": "10:00", "width": 1}, {"from": "8:00", "to": "12:00", "width": 1}, {"from": "10:00", "to": "12:00", "width": 1}, {"from": "12:00", "to": "14:00", "width": 1}, {"from": "16:00", "to": "18:00", "width": 1}, {"from": "16:00", "to": "18:01", "width": 1}, {"from": "18:00", "to": "18:01", "width": 1}, {"from": "18:01", "to": "18:02", "width": 1}, {"from": "Daidzein", "to": "Genistein", "width": 1}, {"from": "Petunidin", "to": "Malvidin", "width": 1}, {"from": "(+)-Catechin", "to": "(-)-Epicatechin", "width": 1}, {"from": "Theaflavin", "to": "Thearubigins", "width": 1}, {"from": "Theaflavin", "to": "Theaflavin-3,3\u0027-digallate", "width": 1}, {"from": "Theaflavin", "to": "Theaflavin-3\u0027-gallate", "width": 1}, {"from": "Theaflavin", "to": "Theaflavin-3-gallate", "width": 1}, {"from": "Thearubigins", "to": "Theaflavin-3,3\u0027-digallate", "width": 1}, {"from": "Thearubigins", "to": "Theaflavin-3\u0027-gallate", "width": 1}, {"from": "Thearubigins", "to": "Theaflavin-3-gallate", "width": 1}, {"from": "Theaflavin-3,3\u0027-digallate", "to": "Theaflavin-3\u0027-gallate", "width": 1}, {"from": "Theaflavin-3,3\u0027-digallate", "to": "Theaflavin-3-gallate", "width": 1}, {"from": "Theaflavin-3\u0027-gallate", "to": "Theaflavin-3-gallate", "width": 1}, {"from": "Vitamin E, added", "to": "Vitamin B-12, added", "width": 1}, {"from": "(-)-Epicatechin 3-gallate", "to": "(-)-Epigallocatechin 3-gallate", "width": 1}, {"from": "Eriodictyol", "to": "Hesperetin", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
