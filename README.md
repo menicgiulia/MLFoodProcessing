@@ -50,8 +50,6 @@ pip install networkx
 pip install pyvis
 pip install scikit-learn
 pip install imbalanced-learn
-  
-  
 ```
 ### Version Numbers for Python Packages
 
