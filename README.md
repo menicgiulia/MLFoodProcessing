@@ -28,7 +28,7 @@ The provided codes have been tested on the following systems:
 
 macOS (12.4) 
 
-Windows: 7+
+Windows 10
 
 Software versions used:
 * Python: 3.6.10
