@@ -2,7 +2,7 @@
   
 # MLFoodProcessing
   
-**Paper**: Machine Learning Prediction of the Degree of Food Processing doi: https://doi.org/10.1101/2021.05.22.21257615
+**Paper**: Machine Learning Prediction of the Degree of Food Processing
 
 **Authors**: G. Menichetti, B. Ravandi, D. Mozaffarian, A-L. Barabasi
 
