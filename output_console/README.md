@@ -11,7 +11,7 @@ Then, please run the "EWAS_organize_all_regression_modules_into_single_table.R" 
 
 Lastly, please only run sections 4 and 5 of the  "EWAS_merge_regression_analysis_from_R.ipynb" to get the final daa files that are currently provided in https://github.com/menicgiulia/MLFoodProcessing/tree/main/input_data
 
-# The R Environmet Info
+# The R Environment Info
 
 
 ```
