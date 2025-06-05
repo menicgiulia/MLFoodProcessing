@@ -8,6 +8,11 @@
 
 **DOI**: https://doi.org/10.1101/2021.05.22.21257615
 
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE.txt)
+
+
+
+
 ### Overview of FoodProX and FPro 
 ![alt text](https://github.com/menicgiulia/MLFoodProcessing/blob/main/Box1.png?raw=true)
 
@@ -189,6 +194,14 @@ loaded via a namespace (and not attached):
 ```    
 
 Typical install time on a normal desktop computer for all Python and R packages is less than 10 minutes.
+
+## License
+
+This project is licensed under the [GNU Affero General Public License v3.0](LICENSE.txt).
+
+> **Note:** This code is provided for research and educational purposes only.  
+> For inquiries about commercial licensing, please contact  
+> Giulia Menichetti ‹giulia.menichetti@channing.harvard.edu›.
 
 
 </p>
